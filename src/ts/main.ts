@@ -42,6 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
         menu.classList.add('active');
       }
     });
+
+    document.addEventListener('scroll', (event) => {
+      if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+      }
+    });
   }
 });
 

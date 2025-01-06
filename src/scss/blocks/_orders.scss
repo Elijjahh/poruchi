@@ -3,10 +3,38 @@
 .orders {
   padding: 138px 0 0;
 
+  &__wrapper {
+    @media (max-width: 700px) {
+      border-radius: 20px;
+      background: rgb(54, 54, 54);
+
+      padding: 39px 28px;
+    }
+  }
+
+  &__title {
+    color: rgb(0, 0, 0);
+    font-family: DIN Condensed;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 5%;
+    text-align: center;
+
+    @media (max-width: 700px) {
+      color: rgba(235, 222, 203, 0.8);
+    }
+  }
+
   &__grid {
+    margin-top: 18px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: getClamp(0, 25) getClamp(0, 42);
+
+    @media (max-width: 700px) {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
   }
 
   &__item {
@@ -21,18 +49,22 @@
 
     color: rgb(255, 255, 255);
     font-family: DIN Condensed;
-    font-size: 24px;
+    font-size: getClamp(14, 24);
     font-weight: 700;
-    line-height: 29px;
+    line-height: calc(29 / 24) * 100%;
     letter-spacing: 5%;
     text-align: center;
+
+    @media (max-width: 700px) {
+      background: rgba(235, 222, 203, 0.8);
+    }
   }
 
   &__icon {
     flex-shrink: 0;
     border-radius: 9999px;
-    width: 54px;
-    height: 54px;
+    width: getClamp(30, 54);
+    height: getClamp(30, 54);
 
     img {
       border-radius: inherit;
@@ -44,48 +76,39 @@
 
   &__others {
     width: fit-content;
-    margin: getClamp(0, 54) auto 0;
+    margin: getClamp(36, 54) auto 0;
     border-radius: 9999px;
     background: rgb(191, 0, 0);
     padding: 18px 28px;
 
     color: rgb(255, 255, 255);
     font-family: DIN Condensed;
-    font-size: 24px;
+    font-size: getClamp(16, 24);
     font-weight: 700;
-    line-height: 29px;
+    line-height: calc(29 / 24) * 100%;
     letter-spacing: 5%;
     text-align: center;
-
-    @media (max-width: 700px) {
-      font-size: 21px;
-    }
   }
 
   &__more {
     width: fit-content;
-    margin: getClamp(0, 54) auto 0;
+    margin: 43px auto 0;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: getClamp(5, 15);
 
     color: rgb(143, 143, 143);
     font-family: DIN Condensed;
-    font-size: 48px;
+    font-size: getClamp(24, 48);
     font-weight: 700;
 
     line-height: calc(58 / 48) * 100%;
     letter-spacing: 5%;
     text-align: left;
-
-    @media (max-width: 700px) {
-      font-size: 43px;
-    }
   }
 
   &__more-icon {
-    width: 45px;
-    height: 37.71px;
+    width: getClamp(23, 45);
 
     img {
       height: 100%;
