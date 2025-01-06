@@ -1,0 +1,58 @@
+@use '../utils' as *;
+
+.map {
+  padding: 150px 0 57px;
+
+  &__wrapper {
+    border-radius: 20px;
+    background: rgb(54, 54, 54);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: calc(100px - getClamp(40, 60)) getClamp(10, 44)
+      calc(100px - getClamp(50, 90));
+  }
+
+  &__img {
+    position: relative;
+    width: min(496px, 100%);
+    border-radius: 20px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      border-radius: inherit;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    top: calc(-1 * getClamp(45, 55));
+    right: getClamp(30, 36);
+    width: getClamp(68, 96);
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__note {
+    margin-top: calc(120px - getClamp(60, 120));
+    color: rgba(235, 222, 203, 0.8);
+    font-family: DIN Condensed;
+    font-size: getClamp(29, 48);
+    font-weight: 700;
+    line-height: calc(58 / 48) * 100%;
+    letter-spacing: 5%;
+    text-align: center;
+
+    @media (max-width: 700px) {
+      p:last-child {
+        margin-top: 30px;
+      }
+    }
+  }
+}

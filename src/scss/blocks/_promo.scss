@@ -1,3 +1,5 @@
+@use '../utils' as *;
+
 .promo {
   position: relative;
   padding-top: 92px;
@@ -20,19 +22,18 @@
   }
 
   &__logo {
-    margin: 0 auto;
-    width: 824px;
-    height: 184px;
+    margin: 0 getClamp(0, 28);
+    display: flex;
+    justify-content: center;
 
     img {
-      height: 100%;
-      width: 100%;
+      width: getClamp(400, 824);
       object-fit: contain;
     }
   }
 
   &__near {
-    margin: -30px auto 0;
+    margin: calc(-1 * getClamp(0, 30)) auto 0;
     width: 181px;
     height: 46px;
 
@@ -48,13 +49,17 @@
 
     color: rgb(145, 112, 74);
     font-family: DIN Condensed;
-    font-size: 96px;
+    font-size: getClamp(36, 96);
+    line-height: calc(115 / 96) * 100%;
     font-weight: 700;
-    line-height: 115px;
     letter-spacing: 5%;
     text-align: center;
 
     text-shadow: 0 4px 4px hsla(0, 0%, 1%, 0.25);
+
+    @media (max-width: 700px) {
+      margin-top: 70px;
+    }
   }
 
   &__goto {
@@ -70,8 +75,8 @@
     color: rgb(255, 255, 255);
     font-family: DIN Condensed;
     font-size: 24px;
+    line-height: calc(29 / 24) * 100%;
     font-weight: 700;
-    line-height: 29px;
     letter-spacing: 5%;
   }
 
@@ -92,7 +97,7 @@
   }
 
   &__more {
-    margin: 30px auto 0;
+    margin: min(14vh, calc(160px - getClamp(30, 130))) auto 0;
 
     color: rgb(121, 120, 120);
     font-family: Tilda Sans VF;

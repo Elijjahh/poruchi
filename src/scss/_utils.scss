@@ -1,0 +1,3 @@
+@function getClamp($min, $max) {
+  @return clamp(#{$min}px, $max / 1200 * 100vw, #{$max}px);
+}
