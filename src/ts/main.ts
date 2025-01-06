@@ -1,5 +1,8 @@
 import '../scss/main.scss';
 
+import Swiper from 'swiper';
+import 'swiper/css';
+
 const elementToShowHide = document.querySelector('.header');
 
 function checkScrollPosition() {
@@ -39,4 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+});
+
+new Swiper('#delivery .swiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 12,
+});
+new Swiper('#places .swiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 12,
 });

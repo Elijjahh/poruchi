@@ -1,0 +1,119 @@
+@use '../utils' as *;
+
+.tasks {
+  padding-top: 149px;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    @media (max-width: 700px) {
+      border-radius: 20px;
+      background: rgb(54, 54, 54);
+      padding: 40px 16px 23px;
+    }
+  }
+
+  &__video {
+    width: getClamp(275, 312);
+    border-radius: 20px;
+
+    @media (max-width: 700px) {
+      margin: 0 auto;
+    }
+
+    video {
+      border-radius: inherit;
+      width: 100%;
+      object-fit: cover;
+
+      @media (max-width: 700px) {
+        max-height: 432px;
+      }
+    }
+  }
+
+  &__info {
+    @media (max-width: 700px) {
+      margin-top: 16px;
+    }
+  }
+
+  &__title {
+    color: rgb(54, 54, 54);
+    font-family: DIN Condensed;
+    font-size: getClamp(32, 48);
+    font-weight: 700;
+    line-height: calc(58 / 48) * 100%;
+    letter-spacing: 5%;
+    text-align: center;
+
+    @media (max-width: 700px) {
+      color: rgba(235, 222, 203, 0.8);
+    }
+  }
+
+  &__items {
+    width: fit-content;
+
+    margin: 11px auto 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+    gap: 37px;
+
+    @media (max-width: 700px) {
+      padding: 0 15px;
+      grid-template-columns: repeat(2, 150px);
+      gap: 8px 20px;
+    }
+  }
+
+  &__item {
+    border-radius: 9999px;
+    background: rgb(54, 54, 54);
+    padding: getClamp(9, 17) getClamp(34, 45) 7px;
+
+    @media (max-width: 700px) {
+      background: rgba(235, 222, 203, 0.8);
+    }
+
+    a {
+      display: block;
+      color: rgb(255, 255, 255);
+      font-family: DIN Condensed;
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 29px;
+      letter-spacing: 5%;
+      text-align: center;
+
+      &.mobile {
+        display: none;
+      }
+
+      @media (max-width: 700px) {
+        &.mobile {
+          display: block;
+        }
+
+        &.desktop {
+          display: none;
+        }
+      }
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 19.62px;
+      height: 10.32px;
+
+      @media (max-width: 700px) {
+        display: none;
+      }
+    }
+  }
+}

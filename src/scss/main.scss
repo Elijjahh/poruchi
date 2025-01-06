@@ -4,6 +4,9 @@
 @use 'blocks/header';
 @use 'blocks/promo';
 @use 'blocks/map';
+@use 'blocks/tasks';
+@use 'blocks/orders';
+@use 'blocks/gallery';
 
 html {
   scroll-snap-type: y mandatory;
@@ -25,4 +28,17 @@ html {
   position: relative;
   width: 100%;
   padding: 0 getClamp(10, 28);
+}
+
+.desktop-850 {
+  @media (max-width: 850px) {
+    display: none;
+  }
+}
+
+.mobile-850 {
+  display: none;
+  @media (max-width: 850px) {
+    display: block;
+  }
 }
