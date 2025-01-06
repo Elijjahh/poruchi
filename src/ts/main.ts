@@ -1,6 +1,7 @@
 import '../scss/main.scss';
 
 import Swiper from 'swiper';
+// @ts-expect-error импорт css, не знаю, чего он ругается
 import 'swiper/css';
 
 const elementToShowHide = document.querySelector('.header');
