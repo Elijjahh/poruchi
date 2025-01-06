@@ -49,7 +49,19 @@ new Swiper('#delivery .swiper', {
   slidesPerView: 'auto',
   spaceBetween: 12,
 });
+
 new Swiper('#places .swiper', {
   slidesPerView: 'auto',
   spaceBetween: 12,
 });
+
+const accordions = document.getElementsByClassName('faq__accordion-item');
+
+for (let i = 0; i < accordions.length; i++) {
+  accordions[i].addEventListener('click', () => {
+    for (const ac of accordions) {
+      ac.classList.remove('active');
+    }
+    accordions[i].classList.toggle('active');
+  });
+}
