@@ -51,6 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+new Swiper('#complexes .swiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 25,
+});
+
 new Swiper('#delivery .swiper', {
   slidesPerView: 'auto',
   spaceBetween: 12,

@@ -1,0 +1,125 @@
+@use '../utils' as *;
+
+.complexes {
+  padding-top: 152px;
+
+  &__wrapper {
+    padding: calc(50px - getClamp(15, 22)) 0 37px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 20px;
+    background: rgb(54, 54, 54);
+  }
+
+  &__arrow {
+    padding: 10px 5px;
+    border-radius: 5px 0 0 5px;
+    background: rgba(255, 255, 255, 0.198);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 1000;
+
+    @media (min-width: 901px) {
+      display: none;
+    }
+  }
+
+  &__title {
+    color: rgba(235, 222, 203, 0.8);
+    font-family: DIN Condensed;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 58px;
+    letter-spacing: 5%;
+    text-align: center;
+  }
+
+  .swiper {
+    margin-top: calc(50px - getClamp(18, 28));
+    width: fit-content;
+    max-width: 100%;
+    height: fit-content;
+    overflow: hidden;
+  }
+
+  .swiper-slide {
+    width: 180px;
+
+    &:last-child {
+      margin-right: 0 !important;
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: 180px;
+    height: 180px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.2);
+
+    &:nth-child(2) {
+      margin-top: 15px;
+    }
+  }
+
+  &__img {
+    border-radius: inherit;
+    position: absolute;
+    inset: 0;
+
+    img {
+      border-radius: inherit;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    margin-top: 78px;
+    position: relative;
+    color: rgb(235, 222, 203);
+    font-family: DIN Condensed;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 5%;
+    text-align: center;
+  }
+
+  &__goto,
+  &__soon {
+    position: relative;
+
+    width: 80px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+    background: rgb(145, 112, 74);
+
+    color: rgb(54, 54, 54);
+    font-family: DIN Condensed;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 5%;
+    text-align: center;
+  }
+
+  &__soon {
+    background: rgb(143, 143, 143);
+  }
+}
