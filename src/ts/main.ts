@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    document.addEventListener('scroll', (event) => {
+    document.addEventListener('scroll', (_event) => {
       if (menu.classList.contains('active')) {
         menu.classList.remove('active');
       }

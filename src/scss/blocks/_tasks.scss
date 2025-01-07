@@ -17,6 +17,7 @@
   }
 
   &__video {
+    position: relative;
     width: getClamp(275, 312);
     border-radius: 20px;
 
@@ -32,6 +33,13 @@
       @media (max-width: 700px) {
         max-height: 232px;
       }
+    }
+
+    button {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
     }
   }
 

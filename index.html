@@ -7,6 +7,31 @@
     <title>PORUCHI - сервис личных поручений</title>
   </head>
   <body>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){m[i]=m[i]function(){(m[i].a=m[i].a[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(99433119, "init", {
+           clickmap:true,
+           trackLinks:true,
+           accurateTrackBounce:true
+      });
+    </script>
+    <noscript>
+      <div>
+        <img
+          src="https://mc.yandex.ru/watch/99433119"
+          style="position: absolute; left: -9999px"
+          alt=""
+        />
+      </div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
     <header class="header">
       <a href="https://t.me/porychi_bot" class="header__goto">Перейти в сервис</a>
       <button class="header__hamburger"><span></span><span></span><span></span></button>
@@ -38,12 +63,12 @@
           <h1 class="visually-hidden">PORUCHI - сервис личных поручений</h1>
           <div class="promo__where">В ЖК «СЕРДЦЕ СТОЛИЦЫ»</div>
 
-          <div class="promo__goto">
+          <a href="https://t.me/porychi_bot" class="promo__goto">
             Перейти в сервис
             <div class="promo__goto-icon">
               <img src="./src/images/arrow-right.svg" alt="" />
             </div>
-          </div>
+          </a>
 
           <div class="promo__more">
             ПОДРОБНЕЕ О СЕРВИСЕ
@@ -81,6 +106,9 @@
 
                 Ваш браузер не поддерживает встроенные видео :(
               </video>
+              <button>
+                <img src="./src/images/play.svg" alt="" />
+              </button>
             </div>
             <div class="tasks__info">
               <h2 class="tasks__title">Берем на себя любые задачи</h2>
@@ -202,6 +230,9 @@
       <section id="delivery" class="section gallery">
         <div class="container">
           <div class="gallery__wrapper">
+            <div class="gallery__arrow">
+              <img src="./src/images/double-arrow-right.svg" alt="" />
+            </div>
             <h2 class="gallery__title">Доставка из ресторанов ЖК</h2>
             <div class="swiper">
               <div class="swiper-wrapper">
@@ -238,6 +269,9 @@
       <section id="places" class="section gallery">
         <div class="container">
           <div class="gallery__wrapper">
+            <div class="gallery__arrow">
+              <img src="./src/images/double-arrow-right.svg" alt="" />
+            </div>
             <h2 class="gallery__title">Места</h2>
             <div class="swiper">
               <div class="swiper-wrapper">
@@ -277,7 +311,7 @@
             <h2 class="faq__title">Ответы на частые вопросы</h2>
 
             <div class="faq__accordion">
-              <div class="faq__accordion-item active">
+              <div class="faq__accordion-item">
                 <div class="faq__accordion-title">Как быстро выполняются поручения?</div>
                 <div class="faq__accordion-content">
                   Большинство задач выполняется в течение 10-30 минут после оформления
@@ -320,12 +354,12 @@
             <div class="footer__logo">
               <img src="./src/images/logo-big.svg" alt="" />
             </div>
-            <div class="footer__goto">
+            <a href="https://t.me/porychi_bot" class="footer__goto">
               Перейти в сервис
               <div class="footer__goto-icon">
                 <img src="./src/images/arrow-right.svg" alt="" />
               </div>
-            </div>
+            </a>
             <ul class="footer__links">
               <li class="footer__link"><a href="#">Условия использования</a></li>
               <li class="footer__link"><a href="#">Конфиденциальность</a></li>
@@ -340,6 +374,41 @@
         </div>
       </section>
     </main>
+
+    <script>
+      const video = document.querySelector('.tasks__video video');
+      const playButton = document.querySelector('.tasks__video button');
+
+      // Функция для воспроизведения видео
+      function playVideo() {
+        video?.play();
+      }
+
+      video.addEventListener('play', () => {
+        playButton.style.display = 'none';
+      });
+
+      video.addEventListener('pause', () => {
+        playButton.style.display = 'block'; // Показать кнопку
+      });
+
+      // Обработчик события завершения видео
+      video.addEventListener('ended', () => {
+        playButton.style.display = 'block'; // Показать кнопку после завершения
+      });
+
+      video
+        .play()
+        .then(() => {})
+        .catch((error) => {
+          playButton.style.display = 'block';
+        });
+
+      // Добавляем обработчик события для кнопки
+      playButton.addEventListener('click', () => {
+        playVideo();
+      });
+    </script>
 
     <script type="module" src="/src/ts/main.ts"></script>
   </body>

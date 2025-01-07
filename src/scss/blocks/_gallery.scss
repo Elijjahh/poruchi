@@ -4,6 +4,7 @@
   padding-top: getClamp(140, 174);
 
   &__wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,6 +13,20 @@
       border-radius: 20px;
       background: rgb(54, 54, 54);
       padding: 40px 5px;
+    }
+  }
+
+  &__arrow {
+    padding: 10px 5px;
+    border-radius: 5px 0 0 5px;
+    background: rgb(54, 54, 54);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 1000;
+
+    @media (min-width: 501px) {
+      display: none;
     }
   }
 
@@ -53,7 +68,7 @@
   }
 
   &__img {
-    width: fit-content;
+    width: 162px;
     border-radius: 20px;
     img {
       border-radius: inherit;
