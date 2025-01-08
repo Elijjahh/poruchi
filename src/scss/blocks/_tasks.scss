@@ -80,15 +80,16 @@
   }
 
   &__item {
-    border-radius: 9999px;
-    background: rgb(54, 54, 54);
-    padding: getClamp(9, 17) getClamp(34, 45) 7px;
+    button {
+      width: 100%;
+      border-radius: 9999px;
+      background: rgb(54, 54, 54);
+      padding: getClamp(9, 17) getClamp(34, 45) 7px;
 
-    @media (max-width: 700px) {
-      background: rgba(235, 222, 203, 0.8);
-    }
+      @media (max-width: 700px) {
+        background: rgba(235, 222, 203, 0.8);
+      }
 
-    a {
       display: block;
       color: rgb(255, 255, 255);
       font-family: DIN Condensed;
