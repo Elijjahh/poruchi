@@ -10,7 +10,15 @@
 @use 'blocks/faq';
 @use 'blocks/footer';
 
-html {
+html,
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main {
+  overflow: scroll;
+  height: 100vh;
   scroll-snap-type: y mandatory;
 }
 
